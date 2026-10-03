@@ -24,17 +24,16 @@ jobs:
         with:
           channel: 'stable'
 
-      # ⚠️ استبدل YOUR_ACTUAL_FOLDER_NAME باسم المجلد الفرعي الحقيقي
       - name: Install dependencies
-        working-directory: ./YOUR_ACTUAL_FOLDER_NAME
+        working-directory: ./app
         run: flutter pub get
 
       - name: Build APK
-        working-directory: ./YOUR_ACTUAL_FOLDER_NAME
+        working-directory: ./app
         run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: YOUR_ACTUAL_FOLDER_NAME/build/app/outputs/flutter-apk/app-release.apk
+          path: app/build/app/outputs/flutter-apk/app-release.apk
