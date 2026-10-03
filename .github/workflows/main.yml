@@ -10,11 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # ⚠️ استبدل my_flutter_app باسم الفولدر اللي جوه الريبو وفيه المشروع بتاعك
-    defaults:
-      run:
-        working-directory: ./my_flutter_app
-
     steps:
       - uses: actions/checkout@v4
 
@@ -39,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: my_flutter_app/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
